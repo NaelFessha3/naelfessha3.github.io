@@ -96,4 +96,49 @@ footer {
   header h1 {
     font-size: 1.1rem;
   }
+
+}body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode header {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode nav a {
+  color: #EAAA00;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode footer {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+  color: #EAAA00;
+}
+
+/* Toggle button style */
+.toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #EAAA00;
+  color: #003057;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-btn:hover {
+  opacity: 0.85;
 }
