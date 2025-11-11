@@ -1,0 +1,99 @@
+:root {
+  --gt-navy: #003057;
+  --gt-gold: #EAAA00;
+  --text-color: #333;
+  --bg-light: #f5f7fa;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--gt-navy);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0.3em 0;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--gt-gold);
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+h1, h2, h3 {
+  color: var(--gt-navy);
+}
+
+a {
+  color: var(--gt-navy);
+}
+
+a:hover {
+  color: var(--gt-gold);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--gt-navy);
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  nav a {
+    display: inline-block;
+    margin: 0.4rem;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header h1 {
+    font-size: 1.1rem;
+  }
+}
