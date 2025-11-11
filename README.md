@@ -1,6 +1,6 @@
-# ePortfolio – [Your Name]
+# ePortfolio – Nael Fessha
 
-> *Electrical and Computer Engineering Student, Georgia Tech*  
+> *Electrical Engineering Student, Georgia Tech*  
 > *Curious builder • Systems-minded thinker • Always shipping*
 
 ![Hero/cover image](https://via.placeholder.com/1200x300?text=ECE+ePortfolio)
@@ -13,7 +13,7 @@
 
 ## 1. Welcome / Introduction
 
-Hello! I’m **[Your Name]**, an undergraduate in **Electrical and Computer Engineering at Georgia Tech** with a growing interest in embedded systems, data-oriented applications, and building things that actually work in the real world. This ePortfolio is a living space where I document who I am, what I’ve built, and where I’m headed.
+Hello! I’m **Nael Fessha**, an undergraduate in **Electrical Engineering at Georgia Tech** with a growing interest in embedded systems, data-oriented applications, and building things that actually work in the real world. This ePortfolio is a living space where I document who I am, what I’ve built, and where I’m headed.
 
 In this ePortfolio you will find:
 - A short story of how I got into engineering
