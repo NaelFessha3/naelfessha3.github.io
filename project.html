@@ -4,7 +4,33 @@
   <meta charset="UTF-8">
   <title>Projects – Nael Fessha</title>
   <link rel="stylesheet" href="style.css">
-</head>
+</head><script>
+function toggleMode() {
+  const body = document.body;
+  const button = document.querySelector('.toggle-btn');
+  body.classList.toggle('dark-mode');
+  
+  if (body.classList.contains('dark-mode')) {
+    button.textContent = '☀️ Light Mode';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    button.textContent = '🌙 Dark Mode';
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Apply saved theme automatically on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const button = document.querySelector('.toggle-btn');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    button.textContent = '☀️ Light Mode';
+  } else {
+    button.textContent = '🌙 Dark Mode';
+  }
+});
+</script>
 <body>
   <header>
     <h1>Technical Projects</h1>
@@ -47,3 +73,4 @@
   </footer>
 </body>
 </html>
+
