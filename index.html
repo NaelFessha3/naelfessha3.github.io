@@ -7,15 +7,16 @@
 </head>
 <body>
   <header>
-    <h1>Nael Fessha – ECE ePortfolio</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="resume.html">Resume</a>
-      <a href="career.html">Career Goals</a>
-      <a href="project.html">Projects</a>
-    </nav>
-  </header>
+  <h1>Nael Fessha – ECE ePortfolio</h1>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="resume.html">Resume</a>
+    <a href="career.html">Career Goals</a>
+    <a href="project.html">Projects</a>
+  </nav>
+</header>
 
   <div class="container">
     <h2>Welcome</h2>
@@ -35,8 +36,34 @@
   <footer>
     &copy; 2025 Nael Fessha | Georgia Tech ECE
   </footer>
+  <script>
+function toggleMode() {
+  const body = document.body;
+  const button = document.querySelector('.toggle-btn');
+  body.classList.toggle('dark-mode');
+  
+  if (body.classList.contains('dark-mode')) {
+    button.textContent = '☀️ Light Mode';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    button.textContent = '🌙 Dark Mode';
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Load saved preference
+window.onload = () => {
+  const savedTheme = localStorage.getItem('theme');
+  const button = document.querySelector('.toggle-btn');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    button.textContent = '☀️ Light Mode';
+  }
+};
+</script>
 </body>
 </html>
+
 
 
 
