@@ -142,3 +142,6 @@ body.dark-mode h3 {
 .toggle-btn:hover {
   opacity: 0.85;
 }
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
