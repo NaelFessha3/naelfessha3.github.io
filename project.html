@@ -45,28 +45,24 @@ window.addEventListener('DOMContentLoaded', () => {
   </header>
 
   <div class="container">
-    <h2>Discovery Project: Smart Environmental Monitoring Node</h2>
-    <img src="https://via.placeholder.com/800x400?text=Project+Demo" alt="Project Demo">
+   <section id="discovery-project" class="project-section">
+  <h2>Discovery Project – Temperature-Controlled Fan</h2>
+  <p>
+    The goal of my Discovery Project was to design and build a 
+    <strong>temperature-controlled fan system</strong> that automatically adjusts its operation based on ambient temperature readings.
+    Using an <strong>Arduino UNO</strong>, an <strong>LM35 temperature sensor</strong>, and a <strong>DC fan</strong>,
+    the system detects temperature changes and activates the fan to maintain a stable environment. 
+    An <strong>LCD1602 display</strong> provides real-time feedback, showing both the temperature and the fan’s current status.
+  </p>
 
-    <p>This project focused on monitoring temperature, humidity, and light conditions in shared lab spaces using an embedded microcontroller. The system recorded environmental changes in real time and visualized data for analysis and optimization.</p>
-
-    <h3>Results</h3>
-    <ul>
-      <li>Designed a reliable sensor network prototype.</li>
-      <li>Collected accurate readings and visualized trends.</li>
-      <li>Documented setup and results for replication.</li>
-    </ul>
-
-    <h3>Visuals</h3>
-    <img src="https://via.placeholder.com/800x400?text=System+Diagram" alt="Diagram">
-    <img src="https://via.placeholder.com/800x400?text=Wiring+Setup" alt="Wiring Setup">
-    <img src="https://via.placeholder.com/800x400?text=Output+Graph" alt="Data Graph">
-
-    <p>Presentation and demo:</p>
-    <ul>
-      <li><a href="https://example.com/demo">Watch Project Demo</a></li>
-      <li><a href="https://example.com/slides">View Presentation Slides</a></li>
-    </ul>
+  <h3>Project Overview</h3>
+  <ul>
+    <li>Automatically turns the fan on above 30°C and off below 28°C.</li>
+    <li>Displays temperature and fan state (“ON” or “OFF”) on an LCD screen.</li>
+    <li>Includes a 5-speed control module that adjusts fan speed dynamically.</li>
+    <li>Uses an LM35 analog sensor and an NPN transistor to switch the fan safely.</li>
+    <li>Built and tested using Arduino C++ with clear modular code.</li>
+  </ul>
   </div>
 
   <footer>
@@ -74,6 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
   </footer>
 </body>
 </html>
+
 
 
 
