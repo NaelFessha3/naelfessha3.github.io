@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Projects – Nael Fessha</title>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+function toggleMode() {
+  const body = document.body;
+  const button = document.querySelector('.toggle-btn');
+  body.classList.toggle('dark-mode');
+  
+  if (body.classList.contains('dark-mode')) {
+    button.textContent = '☀️ Light Mode';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    button.textContent = '🌙 Dark Mode';
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Apply saved theme automatically on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const button = document.querySelector('.toggle-btn');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    button.textContent = '☀️ Light Mode';
+  } else {
+    button.textContent = '🌙 Dark Mode';
+  }
+});
+</script>
+
 <body>
-
-  <!-- Dark mode button -->
-  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
-
   <header>
     <h1>Technical Projects</h1>
     <nav>
@@ -23,76 +48,46 @@
   </header>
 
   <div class="container">
+   <section id="discovery-project" class="project-section">
+  <h2>Discovery Project – Temperature-Controlled Fan</h2>
+  <p>
+    The goal of my Discovery Project was to design and build a 
+    <strong>temperature-controlled fan system</strong> that automatically adjusts its operation based on ambient temperature readings.
+    Using an <strong>Arduino UNO</strong>, an <strong>LM35 temperature sensor</strong>, and a <strong>DC fan</strong>,
+    the system detects temperature changes and activates the fan to maintain a stable environment. 
+    An <strong>LCD1602 display</strong> provides real-time feedback, showing both the temperature and the fan’s current status.
+  </p>
 
-    <section id="discovery-project" class="project-section">
-      <h2>Discovery Project – Temperature-Controlled Fan</h2>
-      <p>
-        The goal of my Discovery Project was to design and build a 
-        <strong>temperature-controlled fan system</strong> that automatically adjusts its operation based on ambient temperature readings.
-        Using an <strong>Arduino UNO</strong>, an <strong>LM35 temperature sensor</strong>, and a <strong>DC fan</strong>,
-        the system detects temperature changes and activates the fan to maintain a stable environment. 
-        An <strong>LCD1602 display</strong> provides real-time feedback, showing both the temperature and the fan’s current status.
-      </p>
+  <h3>Project Overview</h3>
+  <ul>
+    <li>Automatically turns the fan on above 30°C and off below 28°C.</li>
+    <li>Displays temperature and fan state (“ON” or “OFF”) on an LCD screen.</li>
+    <li>Includes a 5-speed control module that adjusts fan speed dynamically.</li>
+    <li>Uses an LM35 analog sensor and an NPN transistor to switch the fan safely.</li>
+    <li>Built and tested using Arduino C++ with clear modular code.</li>
+  </ul>
 
-      <h3>Project Overview</h3>
-      <ul>
-        <li>Automatically turns the fan on above 30°C and off below 28°C.</li>
-        <li>Displays temperature and fan state (“ON” or “OFF”) on an LCD screen.</li>
-        <li>Includes a 5-speed control module that adjusts fan speed dynamically.</li>
-        <li>Uses an LM35 analog sensor and an NPN transistor to switch the fan safely.</li>
-        <li>Built and tested using Arduino C++ with clear modular code.</li>
-      </ul>
+  <!-- ⭐ ADDED VIDEO SECTION HERE ⭐ -->
+  <h3>Project Demonstration Video</h3>
+  <p>Upload your personal video to the GitHub repo and replace <strong>myvideo.mp4</strong> below.</p>
 
-      <!-- ⭐ PERSONAL VIDEO SECTION ⭐ -->
-      <h3>Project Demonstration Video</h3>
-      <p>You can upload your own personal video here. After uploading the .mp4 file to your GitHub repo, replace <strong>myvideo.mp4</strong> with your actual file name.</p>
+  <div style="text-align:center; margin-top:15px;">
+    <video width="560" controls>
+      <source src="myvideo.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+  <!-- ⭐ END OF VIDEO SECTION ⭐ -->
 
-      <div style="text-align:center; margin-top:15px;">
-        <video width="560" controls>
-          <source src="myvideo.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-      </div>
-      <!-- END VIDEO SECTION -->
-
-    </section>
-
+   </section>
   </div>
 
   <footer>
     &copy; 2025 Nael Fessha | Georgia Tech ECE
   </footer>
-
-  <!-- Dark Mode Script -->
-  <script>
-  function toggleMode() {
-    const body = document.body;
-    const button = document.querySelector('.toggle-btn');
-    body.classList.toggle('dark-mode');
-    
-    if (body.classList.contains('dark-mode')) {
-      button.textContent = '☀️ Light Mode';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      button.textContent = '🌙 Dark Mode';
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    const button = document.querySelector('.toggle-btn');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      button.textContent = '☀️ Light Mode';
-    } else {
-      button.textContent = '🌙 Dark Mode';
-    }
-  });
-  </script>
-
 </body>
 </html>
+
 
 
 
