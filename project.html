@@ -8,7 +8,7 @@
 
 <body>
 
-  <!-- Dark mode button (moved from head so it works correctly) -->
+  <!-- Dark mode button -->
   <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
 
   <header>
@@ -19,66 +19,51 @@
       <a href="resume.html">Resume</a>
       <a href="career.html">Career Goals</a>
       <a href="project.html">Projects</a>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Discovery Project – Nael Fessha</title>
-  <link rel="stylesheet" href="style.css">
-
+    </nav>
+  </header>
 
   <div class="container">
 
-    <h2>Discovery Project Idea – Starting Pitch</h2>
-    <p>
-      For my Discovery Project, I wanted to build something practical that also helped me learn real electrical and
-      computer engineering skills. My initial idea was to create a temperature-controlled fan system that could
-      automatically adjust its speed based on surrounding temperature.
-    </p>
+    <section id="discovery-project" class="project-section">
+      <h2>Discovery Project – Temperature-Controlled Fan</h2>
+      <p>
+        The goal of my Discovery Project was to design and build a 
+        <strong>temperature-controlled fan system</strong> that automatically adjusts its operation based on ambient temperature readings.
+        Using an <strong>Arduino UNO</strong>, an <strong>LM35 temperature sensor</strong>, and a <strong>DC fan</strong>,
+        the system detects temperature changes and activates the fan to maintain a stable environment. 
+        An <strong>LCD1602 display</strong> provides real-time feedback, showing both the temperature and the fan’s current status.
+      </p>
 
-    <h2>Project Progress</h2>
-    <p>
-      I began by selecting all required components for the system: an Arduino Uno, DHT11 temperature sensor, 16x2 LCD,
-      L298N motor driver, and a 5V DC fan. I first verified the sensor by reading temperature in the Serial Monitor,
-      then displayed it on the LCD. After wiring the motor driver, I programmed the fan to change speeds based on
-      temperature ranges. Finally, I combined all subsystems into one working unit.
-    </p>
+      <h3>Project Overview</h3>
+      <ul>
+        <li>Automatically turns the fan on above 30°C and off below 28°C.</li>
+        <li>Displays temperature and fan state (“ON” or “OFF”) on an LCD screen.</li>
+        <li>Includes a 5-speed control module that adjusts fan speed dynamically.</li>
+        <li>Uses an LM35 analog sensor and an NPN transistor to switch the fan safely.</li>
+        <li>Built and tested using Arduino C++ with clear modular code.</li>
+      </ul>
 
-    <h2>Project Successes and Failures</h2>
-    <p>
-      During development I experienced several challenges, such as the LCD dimming when the fan activated due to voltage
-      drops, and larger fans drawing too much current for the Arduino. I solved these by improving power management and
-      using smaller fans with lower current demands. Despite these issues, I had multiple successes including accurate
-      temperature readings, responsive fan control, and a fully functioning integrated system.
-    </p>
+      <!-- ⭐ PERSONAL VIDEO SECTION ⭐ -->
+      <h3>Project Demonstration Video</h3>
+      <p>You can upload your own personal video here. After uploading the .mp4 file to your GitHub repo, replace <strong>myvideo.mp4</strong> with your actual file name.</p>
 
-    <h2>ECE Skills Gained</h2>
-    <ul>
-      <li>Microcontroller programming using Arduino C/C++</li>
-      <li>Sensor integration with the DHT11</li>
-      <li>Circuit prototyping and breadboard wiring</li>
-      <li>PWM-based motor speed control</li>
-      <li>Debugging hardware and software interactions</li>
-      <li>Understanding power supply requirements and driver limitations</li>
-    </ul>
+      <div style="text-align:center; margin-top:15px;">
+        <video width="560" controls>
+          <source src="myvideo.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <!-- END VIDEO SECTION -->
 
-    <h2>Final Thoughts</h2>
-    <p>
-      This project increased my interest in embedded systems and reinforced my understanding of electrical engineering
-      concepts. It helped me gain hands-on knowledge of sensors, displays, motor drivers, and microcontroller
-      programming. In the future, I hope to expand this project by adding humidity-based control, a better driver, and
-      possibly a Bluetooth/mobile interface for remote monitoring.
-    </p>
+    </section>
 
   </div>
-
-  
 
   <footer>
     &copy; 2025 Nael Fessha | Georgia Tech ECE
   </footer>
 
-  <!-- Your original Dark Mode script -->
+  <!-- Dark Mode Script -->
   <script>
   function toggleMode() {
     const body = document.body;
@@ -94,7 +79,6 @@
     }
   }
 
-  // Apply saved theme automatically on page load
   window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const button = document.querySelector('.toggle-btn');
