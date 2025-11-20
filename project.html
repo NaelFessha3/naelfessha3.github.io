@@ -49,35 +49,116 @@ window.addEventListener('DOMContentLoaded', () => {
 
   <div class="container">
    <section id="discovery-project" class="project-section">
-  <h2>Discovery Project – Temperature-Controlled Fan</h2>
-  <p>
-    The goal of my Discovery Project was to design and build a 
-    <strong>temperature-controlled fan system</strong> that automatically adjusts its operation based on ambient temperature readings.
-    Using an <strong>Arduino UNO</strong>, an <strong>LM35 temperature sensor</strong>, and a <strong>DC fan</strong>,
-    the system detects temperature changes and activates the fan to maintain a stable environment. 
-    An <strong>LCD1602 display</strong> provides real-time feedback, showing both the temperature and the fan’s current status.
-  </p>
+  <h2>Discovery Project – Temperature-Controlled Fan System</h2>
 
-  <h3>Project Overview</h3>
-  <ul>
-    <li>Automatically turns the fan on above 30°C and off below 28°C.</li>
-    <li>Displays temperature and fan state (“ON” or “OFF”) on an LCD screen.</li>
-    <li>Includes a 5-speed control module that adjusts fan speed dynamically.</li>
-    <li>Uses an LM35 analog sensor and an NPN transistor to switch the fan safely.</li>
-    <li>Built and tested using Arduino C++ with clear modular code.</li>
-  </ul>
+<h3>The Problem</h3>
+<p>
+  For my Discovery Project, I wanted to challenge myself with a hands-on system that involved real ECE concepts such as 
+  sensors, microcontroller programming, and motor control. The core question I set out to solve was:
+  <strong>"How can I build a small electronic system that senses temperature and responds automatically by controlling a fan?"</strong>
+  Although simple, this problem pushed me to explore embedded systems and integrate multiple hardware components.
+</p>
 
-  <!-- ⭐ ADDED VIDEO SECTION HERE ⭐ -->
-  <h3>Project Demonstration Video</h3>
-  <p>Upload your personal video to the GitHub repo and replace <strong>myvideo.mp4</strong> below.</p>
+<h3>The Process</h3>
 
-  <div style="text-align:center; margin-top:15px;">
-    <video width="560" controls>
-      <source src="myvideo.mp4" type="video/mp4">
-      Your browser does not support video playback.
-    </video>
-  </div>
-  <!-- ⭐ END OF VIDEO SECTION ⭐ -->
+<h4>1. Empathize & Understand</h4>
+<p>
+  I researched temperature sensors and learned that the <strong>DHT11</strong> would be easy to interface with an Arduino.
+  I also studied how PWM works for controlling fan speed and how motor drivers protect the microcontroller.
+</p>
+
+<h4>2. Define</h4>
+<p>The system needed to be able to:</p>
+<ul>
+  <li>Read live temperature values</li>
+  <li>Display the readings clearly</li>
+  <li>Turn a fan on when the temperature rises</li>
+  <li>Adjust fan speed automatically</li>
+</ul>
+
+<h4>3. Ideate</h4>
+<p>I selected the following components:</p>
+<ul>
+  <li>Arduino Uno</li>
+  <li>DHT11 Temperature Sensor</li>
+  <li>16×2 LCD Display</li>
+  <li>L298N Motor Driver</li>
+  <li>5V DC Fan</li>
+</ul>
+<p>
+  I planned wiring diagrams, reviewed data sheets, and learned which pins connect to the LCD, sensor, and driver.
+</p>
+
+<h4>4. Prototype</h4>
+<p>
+  I built the first version on a breadboard:
+</p>
+<ul>
+  <li>Connected the DHT11 to Arduino pin 7</li>
+  <li>Wired the LCD using 4-bit parallel mode</li>
+  <li>Connected the fan to the L298N motor driver outputs</li>
+  <li>Programmed PWM logic to control speed based on temperature</li>
+</ul>
+
+<h4>5. Test</h4>
+<p>
+  I tested the system by blowing warm air on the sensor and observing the LCD data and fan behavior.
+  I also tested multiple fan types and learned how current limitations affect performance.
+</p>
+
+<h3>The Outcome</h3>
+<p>
+  The final system successfully reads real-time temperature, displays it on the LCD, and controls the fan’s speed 
+  automatically based on threshold values. The project clearly demonstrates a closed-loop control system using 
+  microcontroller logic, sensors, and output hardware.
+</p>
+
+<h3>Project Successes & Failures</h3>
+
+<h4>Successes</h4>
+<ul>
+  <li>Accurate temperature readings</li>
+  <li>Real-time display using LCD</li>
+  <li>Automatic fan speed control using PWM</li>
+  <li>Successful integration of all hardware components</li>
+</ul>
+
+<h4>Challenges / Failures</h4>
+<ul>
+  <li>Voltage drops caused the LCD to dim when the fan activated</li>
+  <li>A larger 5V fan required too much current for the Arduino to supply</li>
+  <li>The DHT11 sometimes produced sensor errors until delays were added</li>
+  <li>L298N voltage drop reduced fan performance</li>
+</ul>
+
+<h3>ECE Skills Gained</h3>
+<ul>
+  <li>Arduino programming using C++</li>
+  <li>Sensor integration (DHT11)</li>
+  <li>LCD interfacing using 4-bit mode</li>
+  <li>PWM motor control</li>
+  <li>Understanding current draw and power limitations</li>
+  <li>Debugging physical circuits and wiring</li>
+  <li>Combining sensors, displays, and motor drivers into one system</li>
+</ul>
+
+<h3>Final Thoughts</h3>
+<p>
+  This project strengthened my understanding of embedded systems and made me more interested in working with hardware
+  and microcontroller-based designs. Although not everything worked perfectly, solving the problems taught me more than
+  a flawless build would have. I plan to continue improving the system by upgrading the motor driver, adding humidity 
+  control, and possibly making a mobile app interface.
+</p>
+
+<h3>Project Demonstration Video</h3>
+<p>Upload your personal video to your GitHub repository and replace <strong>myvideo.mp4</strong> below.</p>
+
+<div style="text-align:center; margin-top:15px;">
+  <video width="560" controls>
+    <source src="myvideo.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+</div>
 
    </section>
   </div>
@@ -87,6 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
   </footer>
 </body>
 </html>
+
 
 
 
