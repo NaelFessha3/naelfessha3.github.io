@@ -1,136 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects – Nael Fessha</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Technical Projects</h1>
-    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="resume.html">Resume</a>
-      <a href="career.html">Career Goals</a>
-      <a href="project.html">Projects</a>
-    </nav>
-  </header>
+---
+layout: default
+title: Technical Projects
+---
 
-  <div class="container">
-    <section id="discovery-project">
-      <h2>Discovery Project – Temperature-Controlled Fan System</h2>
+{% include nav.html %}
 
-      <h3>The Problem</h3>
-      <p>
-        For my Discovery Project, I wanted to challenge myself with a hands-on system that involved real ECE concepts such as
-        sensors, microcontroller programming, and motor control. The core question I set out to solve was:
-        <strong>"How can sensor data be used in electronic systems to automatically control physical outputs?"</strong>
-        Although simple, this problem pushed me to explore embedded systems and integrate multiple hardware components.
-      </p>
+<h2>Discovery Project – Temperature-Controlled Fan System</h2>
 
-      <h3>The Process</h3>
+<h3>The Problem</h3>
+<p>
+  For my Discovery Project, I wanted to challenge myself with a hands-on system that involved real ECE concepts such as
+  sensors, microcontroller programming, and motor control. The core question I set out to solve was:
+  <strong>"How can sensor data be used in electronic systems to automatically control physical outputs?"</strong>
+  Although simple, this problem pushed me to explore embedded systems and integrate multiple hardware components.
+</p>
 
-      <h4>1. Empathize &amp; Understand</h4>
-      <p>
-        I researched temperature sensors and learned that the <strong>DHT11</strong> would be easy to interface with an Arduino.
-        I also studied how PWM works for controlling fan speed and how motor drivers protect the microcontroller.
-      </p>
+<h3>The Process</h3>
 
-      <h4>2. Define</h4>
-      <p>The system needed to be able to:</p>
-      <ul>
-        <li>Read live temperature values</li>
-        <li>Display the readings clearly</li>
-        <li>Turn a fan on when the temperature rises</li>
-        <li>Adjust fan speed automatically</li>
-      </ul>
+<h4>1. Empathize &amp; Understand</h4>
+<p>
+  I researched temperature sensors and learned that the <strong>DHT11</strong> would be easy to interface with an Arduino.
+  I also studied how PWM works for controlling fan speed and how motor drivers protect the microcontroller.
+</p>
 
-      <h4>3. Ideate</h4>
-      <p>I selected the following components:</p>
-      <ul class="skill-tags">
-        <li class="skill-tag">Arduino Uno</li>
-        <li class="skill-tag">DHT11 Sensor</li>
-        <li class="skill-tag">16×2 LCD Display</li>
-        <li class="skill-tag">L298N Motor Driver</li>
-        <li class="skill-tag">5V DC Fan</li>
-      </ul>
-      <p>I planned wiring diagrams, reviewed data sheets, and learned which pins connect to the LCD, sensor, and driver.</p>
+<h4>2. Define</h4>
+<p>The system needed to be able to:</p>
+<ul>
+  <li>Read live temperature values</li>
+  <li>Display the readings clearly</li>
+  <li>Turn a fan on when the temperature rises</li>
+  <li>Adjust fan speed automatically</li>
+</ul>
 
-      <h4>4. Prototype</h4>
-      <p>I built the first version on a breadboard:</p>
-      <ul>
-        <li>Connected the DHT11 to Arduino pin 7</li>
-        <li>Wired the LCD using 4-bit parallel mode</li>
-        <li>Connected the fan to the L298N motor driver outputs</li>
-        <li>Programmed PWM logic to control speed based on temperature</li>
-      </ul>
+<h4>3. Ideate</h4>
+<p>I selected the following components:</p>
+<ul>
+  <li>Arduino Uno</li>
+  <li>DHT11 Sensor</li>
+  <li>16×2 LCD Display</li>
+  <li>L298N Motor Driver</li>
+  <li>5V DC Fan</li>
+</ul>
+<p>I planned wiring diagrams, reviewed data sheets, and learned which pins connect to the LCD, sensor, and driver.</p>
 
-      <h4>5. Test</h4>
-      <p>
-        I tested the system by blowing warm air on the sensor and observing the LCD data and fan behavior.
-        I also tested multiple fan types and learned how current limitations affect performance.
-      </p>
+<h4>4. Prototype</h4>
+<p>I built the first version on a breadboard:</p>
+<ul>
+  <li>Connected the DHT11 to Arduino pin 7</li>
+  <li>Wired the LCD using 4-bit parallel mode</li>
+  <li>Connected the fan to the L298N motor driver outputs</li>
+  <li>Programmed PWM logic to control speed based on temperature</li>
+</ul>
 
-      <h3>The Outcome</h3>
-      <p>
-        The final system successfully reads real-time temperature, displays it on the LCD, and controls the fan's speed
-        automatically based on threshold values. The project clearly demonstrates a closed-loop control system using
-        microcontroller logic, sensors, and output hardware.
-      </p>
+<h4>5. Test</h4>
+<p>
+  I tested the system by blowing warm air on the sensor and observing the LCD data and fan behavior.
+  I also tested multiple fan types and learned how current limitations affect performance.
+</p>
 
-      <h3>Successes &amp; Challenges</h3>
+<h3>The Outcome</h3>
+<p>
+  The final system successfully reads real-time temperature, displays it on the LCD, and controls the fan's speed
+  automatically based on threshold values. The project clearly demonstrates a closed-loop control system using
+  microcontroller logic, sensors, and output hardware.
+</p>
 
-      <h4>Successes</h4>
-      <ul>
-        <li>Accurate temperature readings</li>
-        <li>Real-time display using LCD</li>
-        <li>Automatic fan speed control using PWM</li>
-        <li>Successful integration of all hardware components</li>
-      </ul>
+<h3>Successes &amp; Challenges</h3>
 
-      <h4>Challenges</h4>
-      <ul>
-        <li>Voltage drops caused the LCD to dim when the fan activated</li>
-        <li>A larger 5V fan required too much current for the Arduino to supply</li>
-        <li>The DHT11 sometimes produced sensor errors until delays were added</li>
-        <li>L298N voltage drop reduced fan performance</li>
-      </ul>
+<h4>Successes</h4>
+<ul>
+  <li>Accurate temperature readings</li>
+  <li>Real-time display using LCD</li>
+  <li>Automatic fan speed control using PWM</li>
+  <li>Successful integration of all hardware components</li>
+</ul>
 
-      <h3>Skills Gained</h3>
-      <ul class="skill-tags">
-        <li class="skill-tag">Arduino / C++</li>
-        <li class="skill-tag">DHT11 Sensor</li>
-        <li class="skill-tag">LCD Interfacing</li>
-        <li class="skill-tag">PWM Motor Control</li>
-        <li class="skill-tag">Power Management</li>
-        <li class="skill-tag">Circuit Debugging</li>
-        <li class="skill-tag">System Integration</li>
-      </ul>
+<h4>Challenges</h4>
+<ul>
+  <li>Voltage drops caused the LCD to dim when the fan activated</li>
+  <li>A larger 5V fan required too much current for the Arduino to supply</li>
+  <li>The DHT11 sometimes produced sensor errors until delays were added</li>
+  <li>L298N voltage drop reduced fan performance</li>
+</ul>
 
-      <h3>Arduino Code</h3>
-      <div>
-        <a href="https://github.com/NaelFessha3/naelfessha3.github.io/blob/main/code.ino" target="_blank" class="btn btn-primary">
-          View Code on GitHub
-        </a>
-      </div>
+<h3>Skills Gained</h3>
+<ul>
+  <li>Arduino / C++</li>
+  <li>DHT11 Sensor</li>
+  <li>LCD Interfacing</li>
+  <li>PWM Motor Control</li>
+  <li>Power Management</li>
+  <li>Circuit Debugging</li>
+  <li>System Integration</li>
+</ul>
 
-      <h3>Project Demonstration</h3>
-      <p>This video demonstrates the temperature-controlled fan responding to real temperature changes, along with the LCD displaying live data.</p>
-      <div class="video-container">
-        <video controls>
-          <source src="IMG_1908.MOV.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-      </div>
-    </section>
-  </div>
+<h3>Arduino Code</h3>
+<p>
+  <a href="https://github.com/NaelFessha3/naelfessha3.github.io/blob/main/code.ino" target="_blank">
+    View Code on GitHub
+  </a>
+</p>
 
-  <footer>
-    &copy; 2025 Nael Fessha | Georgia Tech ECE
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<h3>Project Demonstration</h3>
+<p>This video demonstrates the temperature-controlled fan responding to real temperature changes, along with the LCD displaying live data.</p>
+<video controls style="max-width: 100%;">
+  <source src="{{ '/IMG_1908.MOV.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support video playback.
+</video>
+
+<hr>
+
+<p style="color:#777;">&copy; 2025 Nael Fessha | Georgia Tech ECE</p>
