@@ -5,6 +5,68 @@ title: Technical Projects
 
 {% include nav.html %}
 
+<h2>Embedded Sidescroller Game with Custom Hash Table</h2>
+<p><em>C &nbsp;·&nbsp; ESP32-C6 &nbsp;·&nbsp; FreeRTOS &nbsp;·&nbsp; uLCD &nbsp;·&nbsp; Georgia Tech</em></p>
+
+<h3>Overview</h3>
+<p>
+  A fully playable 2D side-scrolling game built on the ESP32-C6 microcontroller, featuring Georgia Tech's mascot Buzz the Yellow Jacket. The player navigates a procedurally generated world, collecting pollen and dodging stingers, while a custom dynamic difficulty system, a top-3 leaderboard, and background music all run concurrently on resource-constrained embedded hardware.
+</p>
+
+<h3>Technical Highlights</h3>
+<ul>
+  <li>Rendered a 128×128 uLCD display with real-time sprite drawing, anti-flicker caching, and frame-budgeted updates to handle 10+ simultaneous entities without tearing</li>
+  <li>Implemented a custom hash table with separate chaining for O(1) spatial lookup of game objects across a cyclic 60×9 tile world map with procedural panel generation</li>
+  <li>Integrated GPIO-driven buzzer audio with a background melody engine and sound-effect system running alongside gameplay logic via FreeRTOS tasks</li>
+  <li>Built a navigation-switch input system, multi-button handler, and LED strip feedback all communicating over hardware peripherals without blocking the game loop</li>
+  <li>Designed a gravity system, dynamic scroll speed, and three-slot persistent leaderboard stored in-memory across rounds</li>
+</ul>
+
+<h3>Skills Gained</h3>
+<ul>
+  <li>Embedded C / ESP32-C6</li>
+  <li>FreeRTOS multitasking</li>
+  <li>Hash table design</li>
+  <li>uLCD graphics pipeline</li>
+  <li>GPIO &amp; hardware peripheral integration</li>
+  <li>Game loop architecture</li>
+</ul>
+
+<h3>Project Demonstration</h3>
+<p>Watch the game running live on hardware:</p>
+<p>
+  <a href="https://youtu.be/fGYtdUCRKkw" target="_blank">▶ Watch on YouTube</a>
+</p>
+
+<hr>
+
+<h2>Diamond Path – Pathfinding Optimization Engine</h2>
+<p><em>RISC-V Assembly &nbsp;·&nbsp; Georgia Tech</em></p>
+
+<h3>Overview</h3>
+<p>
+  A pure RISC-V Assembly program that finds the minimum-cost 5-step path out of a diamond-shaped grid of 121 weighted cells using a dynamic programming approach. The solution fills cumulative costs outward from the center along four axes and four quadrant loops, then scans all 20 boundary endpoints to return the global minimum.
+</p>
+
+<h3>Technical Highlights</h3>
+<ul>
+  <li>Replaced a brute-force permutation search with in-place dynamic programming: costs propagate outward along right, left, up, and down axes first, then four quadrant passes fill remaining cells by comparing two candidate predecessor costs per cell</li>
+  <li>Used 5-bit binary masking as a hardware-level multiplexer to evaluate path permutations without branch overhead, minimizing dynamic instruction count</li>
+  <li>Optimized at the ISA level against strict baseline metrics for dynamic execution length, static code size, and operand storage — all within the constraints of bare-metal RISC-V (no OS, no stdlib)</li>
+  <li>Implemented entirely with RISC-V integer instructions (addi, lw, sw, bge, blt, slli, jal), no pseudo-instructions, across structured labeled loops for each axis and quadrant</li>
+</ul>
+
+<h3>Skills Gained</h3>
+<ul>
+  <li>RISC-V Assembly</li>
+  <li>Dynamic programming</li>
+  <li>ISA-level optimization</li>
+  <li>Bit manipulation</li>
+  <li>Low-level memory addressing</li>
+</ul>
+
+<hr>
+
 <h2>Discovery Project – Temperature-Controlled Fan System</h2>
 
 <h3>The Problem</h3>
